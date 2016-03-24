@@ -14,6 +14,15 @@ And you'll get:
 __provide screenshot__
 
 ## Installation
+### For development
+babpi can be run straight from your dev machine with:
+
+    npm install
+    npm run dev
+
+Then just open http://127.0.0.1:3000/ in your favorite browser. You can mock the button interface by pressing a, A, b and B.
+
+
 ### Raspberry pi
 Let's start with a fresh raspberry pi:
 
@@ -38,8 +47,8 @@ Let's start with a fresh raspberry pi:
     git clone https://github.com/dav-m85/babpi.git
     cd babpi
     npm install
-    # npm install onoff
-    npm run build-js
+    npm install onoff
+    npm run build
 
     # Setup GPIO
     cd wiringPi-b0a60c3/
@@ -59,28 +68,19 @@ Let's start with a fresh raspberry pi:
     node /home/pi/babpi/server.js </dev/null >/home/pi/babpi/server.log 2>&1 &
     chromium-browser --kiosk http://192.168.0.107:3000/scoreboard --incognito
 
-### For development
-babpi can be run straight from your dev machine with:
-
-    npm install
-    npm run start
-
-Then just open http://127.0.0.1:3000/ in your favorite browser. You can mock the button interface by pressing a, A, b and B.
-
-
 ## TODO
 There's still a few things I would like to improve:
 
 * Stat endpoint
 * Ranking page with TrueSkill algo, could use http://www.moserware.com/2010/03/computing-your-skill.html, and even https://github.com/freethenation/node-trueskill
 * Deal with longClick and shortClick on the GPIO
-* Cleanup the css
 * Autocomplete player in book page
 * Competition mode
 * Proper build to ease installation
 * Propose a wireless version with a [low energy transceiver](http://www.miniinthebox.com/nrf24l01-2-4ghz-wireless-transceiver-module-for-arduino_p903473.html). 
 * long click cancel point instead of canceling game
 * long click on both sides cancel the game
+* On win screen, long click replay
 
 Feel free to do a Pull Request.
 
